@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Update</title>
+<style type = "text/css">
+body{
+
+  background: linear-gradient(white, #6fb5f7); /* Standard syntax */
+
+}
+h1{
+    color: #1364af;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+h2{
+  color:#1364af;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+a{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  padding: 3px;
+}
+
+a:hover {
+  color:black;
+  background-color:#6fb5f7;
+}
+</style>
+
+<script type="text/javascript">
+
+function displayTable(table) {
+    var elems = document.getElementsByName("subselector");
+        for (var i = 0; i < elems.length; i++) {
+            elems.item(i).style.display = "none";
+        }
+        document.getElementById(table).style.display = "block";
+    }
+</script>
+
+</head>
+<body>
+<center>
+<h1>TV Show Database</h1>
+
+<a href="search.html">Search</a>
+<a href="update.html">Update</a>
+<a href="insert.html">Insert</a>
+<a href="delete.html">Delete</a>
+<a href="view.html">View</a>
+
+<h2> Select a Record to Update</h2>
+
+<select id = "table" onchange="displayTable(this.value)">
+<option>Select Table</option>
+<option value = "tvshow">TV Show</option>
+<option value = "character">Character</option>
+<option value = "actor">Actor</option>
+<option value = "writer">Writer</option>
+<option value = "episode">Episode</option>
+
+</select>
+
+<form id = "tvshow" name = "subselector" action="updateshow.php" method="post" style="display:none">
+        Name: <input type="text" name="showname"><br>
+        Studio: <input type="text" name="studioname"><br>
+        Year Start: <input type="text" name="yearstart"><br>
+        Year End: <input type="text" name="yearend"><br>
+        <input type="submit" value="Update" />
+      </form>
+<form id = "character" name = "subselector" action= "updatecharacter.php" method = "post" style = "display:none">
+  Name: <input type="text" name="name"><br>
+  Role: <input type="text" name="role"><br>
+  Occupation: <input type="text" name="occupation"><br>
+  Significant other: <input type="text" name="significantother"><br>
+  <input type="submit" value = "Update"/>
+</form>
+
+<form id = "actor" name = "subselector" action= "updateactor.php" method = "post" style = "display:none">
+  Name: <input type="text" name="name"><br>
+  Address:<input type="text" name="address"><br>
+  Age: <input type="text" name="age"><br>
+  Sex: <input type="text" name="sex"><br>
+  Salary: <input type="text" name="salary"><br>
+  <input type="Submit" value = "Update"/>
+</form>
+
+<form id = "writer" name = "subselector" action= "updatewriter.php" method = "post" style = "display:none">
+  Name: <input type="text" name="name"><br>
+  Sex: <input type="text" name="sex"><br>
+  Salary: <input type="text" name="salary"><br>
+  <input type="Submit" value = "Update"/>
+</form>
+
+<form id = "episode" name = "subselector" action="updatep.php" method="post" style="display:none">
+        Show Name: <input type="text" name="showname"><br>
+        Episode Number: <input type="text" name="number"><br>
+        <input type="submit" value="Update" />
+      </form>
+
+
+</center>
+
+</html>
